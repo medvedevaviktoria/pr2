@@ -17,7 +17,7 @@ fun main() {
 
     //ключ - набор букв
     //значение - список слов
-    val result = mutableMapOf<String, MutableSet<String>>()//карта <строка из букв в словах, список слов из этих одинаковых букв>
+    val result = mutableMapOf<String, MutableSet<String>>()//карта <строка из букв в словах, список слов из этих одинаковых букв> // string - набор букв; Сет - список слов, состоящих из тих букв.
 
     for (word in input) {
         val letters = word.toSet().distinct().sorted().toString() //список букв в слове
