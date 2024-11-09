@@ -21,7 +21,7 @@ fun main() {
 
     for (word in input) {
         val letters = word.toSet().distinct().sorted().toString() //список букв в слове
-        val lettersKey = result[letters] // list равен ключу в карте result по значению строки из букв
+        val lettersKey = result[letters] // list равен ключу в карте result по значению строки из букв //находим есть ли значения в result равные данному набору букв
         if (lettersKey == null ) {
             result[letters] = mutableSetOf(word) // присваиваем к списку именно этих букв ключ со значением слова, состощего из этих букв
         }
