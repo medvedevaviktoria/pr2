@@ -84,11 +84,11 @@ fun encrypt(text: String, keyword: String, alphabet: Map<Char, Int>): String {
     var resultText = "" //зашифрованный текст
     var keywordIndex = 0 //индекс символа в ключевом слове
     for (char in text) {    // перебиираем символы текста
-        val letterNum = alphabet[char]!! // получаем НОМЕР данной буквы в исходном слове
-        val shift = alphabet[keyword[keywordIndex % keyword.length]]!! // получаем НОМЕР данной буквы в ключевом слове |||| keywordIndex % keyword.length - чтобы индекс буквы в ключевом слове не выходил за границы
+        val letterNum = alphabet[char]!! // получаем НОМЕР данной буквы в исходном слове из алфавита
+        val shift = alphabet[keyword[keywordIndex % keyword.length]]!! // получаем НОМЕР данной буквы в ключевом слове по алфавиту |||| keywordIndex % keyword.length - чтобы индекс буквы в ключевом слове не выходил за границы
         var resultNum = letterNum + shift
         if (resultNum > 33) { resultNum = resultNum % 33}
-        val letterResult = alphabet.filterValues { it == resultNum}.keys.first() //находим букву по новому номеру(шифруем)
+        val letterResult = alphabet.filterValues { it == resultNum}.keys.first() //находим букву по новому номеру(шифруем) // фильтр по значению
         resultText += letterResult
         keywordIndex++
     }
